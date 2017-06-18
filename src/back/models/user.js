@@ -1,6 +1,6 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
-  var User = sequelize.define('user', {
+  var user = sequelize.define('user', {
     email: {
       type: DataTypes.STRING,
       unique: true,
@@ -39,5 +39,5 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   });
-  return User;
+  return user;
 };
