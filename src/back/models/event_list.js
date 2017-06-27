@@ -7,12 +7,11 @@ module.exports = function(sequelize, DataTypes) {
         length: [1, 30]
       }
     }
-  }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-      }
-    }
+  }
+
+  event_list.associate = function(models) {
+    event_list.belongsTo(models.user);
   });
+
   return event_list;
 };
