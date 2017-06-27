@@ -32,12 +32,11 @@ module.exports = function(sequelize, DataTypes) {
         isAlpha: true
       }
     }
-  }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-      }
-    }
   });
+
+  user.associate = function(models) {
+    user.hasMany(models.event_list);
+  };
+
   return user;
 };
