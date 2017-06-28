@@ -13,10 +13,11 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     note: DataTypes.STRING
-  })
+  });
 
   list_item.associate = function(models) {
-    list_item.belongsTo(models.event_list);  
+    list_item.belongsTo(models.event_list);
+    list_item.hasMany(models.contribution);
   };
 
   return list_items;
