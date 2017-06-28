@@ -36,6 +36,7 @@ module.exports = function(sequelize, DataTypes) {
 
   user.associate = function(models) {
     user.hasMany(models.event_list);
+    user.hasMany(models.contribution);
   };
 
   return user;
