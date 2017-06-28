@@ -4,7 +4,7 @@ module.exports = function(sequelize, DataTypes) {
     list_name: {
       type: DataTypes.STRING,
       validate: {
-        length: [1, 30]
+        len: [1, 30]
       }
     }
   });

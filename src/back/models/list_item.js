@@ -3,7 +3,7 @@ module.exports = function(sequelize, DataTypes) {
   var list_item = sequelize.define('list_item', {
     item_name: {
       type: DataTypes.STRING,
-      length: [2, 26],
+      len: [2, 26],
       allowNull: false
     },
     quantity_goal: {
