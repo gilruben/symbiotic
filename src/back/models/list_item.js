@@ -20,5 +20,5 @@ module.exports = function(sequelize, DataTypes) {
     list_item.hasMany(models.contribution);
   };
 
-  return list_items;
+  return list_item;
 };
