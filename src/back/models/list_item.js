@@ -1,6 +1,6 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
-  var list_items = sequelize.define('list_item', {
+  var list_item = sequelize.define('list_item', {
     item_name: {
       type: DataTypes.STRING,
       length: [2, 26],
@@ -13,12 +13,11 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     note: DataTypes.STRING
-  }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-      }
-    }
-  });
+  })
+
+  list_item.associate = function(models) {
+    list_item.belongsTo(models.event_list);  
+  };
+
   return list_items;
 };
