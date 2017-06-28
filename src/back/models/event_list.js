@@ -11,6 +11,7 @@ module.exports = function(sequelize, DataTypes) {
 
   event_list.associate = function(models) {
     event_list.belongsTo(models.user);
+    event_list.hasMany(models.list_item);
   };
 
   return event_list;
