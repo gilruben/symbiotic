@@ -31,10 +31,16 @@ const authRouter = () => {
     });
   };
 
+  const checkLoginStatus = (req, res) => {
+    res.sendStatus(200);
+  };
+
 
   router.route('/login')
     .post(userLogin);
 
+  router.route('/verify')
+    .get(authenticate, checkLoginStatus);
 
   return router;
 }
