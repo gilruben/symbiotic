@@ -2,6 +2,7 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const path = require('path');
 const session = require('express-session');
+const passportConfig = require('../passport/passport');
 const PgSimpleSessionStore = require('connect-pg-simple')(session);
 const dbConfig = require('../config/config');
 
@@ -29,6 +30,8 @@ const applyExpressMiddleware = (app) => {
     },
     ephemeral: true  // session expires when the browser closes
   }));
+
+  passportConfig(app);
 };
 
 module.exports = applyExpressMiddleware;
