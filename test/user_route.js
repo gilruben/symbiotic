@@ -20,4 +20,24 @@ describe('user-route-test', () => {
     });
   });
 
+  // Logs in user
+  it('\'/auth/login\' will log in the user', (done) => {
+    agent
+    .post('/auth/login')
+    .send({ email: 'gumby@gmail.com', password: 'password' })
+    .end((err, res) => {
+      done();
+    });
+  });
+
+  // Test to delete a user
+  it('\'/api/user\' should respond with status code 200', (done) => {
+    agent
+    .delete('/api/user')
+    .end((err, res) => {
+      expect(res.status).equal(200)
+
+      done();
+    });
+  });
 });
