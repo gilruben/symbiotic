@@ -31,6 +31,11 @@ const authRouter = () => {
     });
   };
 
+  const userLogout = (req, res) => {
+    req.session.destroy();
+    res.sendStatus(200);
+  };
+
   const checkLoginStatus = (req, res) => {
     res.sendStatus(200);
   };
@@ -38,6 +43,9 @@ const authRouter = () => {
 
   router.route('/login')
     .post(userLogin);
+
+  router.route('/logout')
+    .post(authenticate, userLogout);
 
   router.route('/verify')
     .get(authenticate, checkLoginStatus);
