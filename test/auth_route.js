@@ -26,4 +26,15 @@ describe('auth-api-test', () => {
       done();
     });
   });
-})
+
+  // Test to see if user can logout
+  it('\'/auth/logout\' should respond with status 200', (done) => {
+    agent
+    .post('/auth/logout')
+    .end((err, res) => {
+      expect(res.status).equal(200);
+
+      done();
+    });
+  });
+});
