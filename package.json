@@ -6,7 +6,8 @@
   "scripts": {
     "start": "nodemon ./src/back/server.js",
     "test": "./node_modules/mocha/bin/mocha",
-    "create-session-table": "psql symbiotic < node_modules/connect-pg-simple/table.sql"
+    "create-session-table": "psql symbiotic < node_modules/connect-pg-simple/table.sql",
+    "seed": "bash seed.sh"
   },
   "keywords": [],
   "author": "",
