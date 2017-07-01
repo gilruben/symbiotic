@@ -16,7 +16,6 @@ const authRouter = () => {
       }
     })
     .then((user) => {
-      console.log(user);
       if (user) {
         req.session.jwt = sign({ id: user.id });
         req.session.save();
