@@ -48,4 +48,16 @@ describe('auth-api-test', () => {
       done();
     });
   });
+
+  // Test to see if user with incorrect login credentials can log in
+  it('\'/auth/login\' should respond with status 401', (done) => {
+    agent
+    .post('/auth/login')
+    .send({ email: 'aread@gmail.com', password: 'pass' })
+    .end((err, res) => {
+      expect(res.status).equal(401);
+
+      done();
+    });
+  });
 });
