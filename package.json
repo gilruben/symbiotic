@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon ./src/back/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/mocha/bin/mocha",
+    "create-session-table": "psql symbiotic < node_modules/connect-pg-simple/table.sql",
+    "seed": "bash seed.sh"
   },
   "keywords": [],
   "author": "",
@@ -15,8 +17,12 @@
     "chai": "^4.0.2",
     "connect-pg-simple": "^4.2.0",
     "express": "^4.15.3",
+    "express-session": "^1.15.3",
+    "jsonwebtoken": "^7.4.1",
     "mocha": "^3.4.2",
     "nodemon": "^1.11.0",
+    "passport": "^0.3.2",
+    "passport-jwt": "^2.2.1",
     "pg": "^6.2.4",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.1.0",

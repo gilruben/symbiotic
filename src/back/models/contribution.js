@@ -8,12 +8,11 @@ module.exports = function(sequelize, DataTypes) {
         min: 1
       }
     }
-  }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-      }
-    }
   });
+
+  contribution.associate = function(models) {
+    contribution.belongsTo(models.user);
+  };
+
   return contribution;
 };

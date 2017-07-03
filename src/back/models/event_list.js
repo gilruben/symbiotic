@@ -4,13 +4,14 @@ module.exports = function(sequelize, DataTypes) {
     list_name: {
       type: DataTypes.STRING,
       validate: {
-        length: [1, 30]
+        len: [1, 30]
       }
     }
   });
 
   event_list.associate = function(models) {
     event_list.belongsTo(models.user);
+    event_list.hasMany(models.list_item);
   };
 
   return event_list;
