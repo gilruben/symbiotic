@@ -20,6 +20,18 @@ describe('user-route-test', () => {
     });
   });
 
+  //Test to create a user that already exists
+  it('\'/api/user\' should respond with status code 400', (done) => {
+    agent
+    .post('/api/user')
+    .send(newUser)
+    .end((err, res) => {
+      expect(res.status).equal(400);
+
+      done();
+    });
+  });
+
   // Logs in user
   it('\'/auth/login\' will log in the user', (done) => {
     agent
