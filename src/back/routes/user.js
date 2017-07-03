@@ -17,7 +17,7 @@ const userRouter = () => {
       res.send(plainUser);
     })
     .catch((err) => {
-      res.status(400);
+      res.sendStatus(400);
     })
   };
 
